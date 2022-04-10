@@ -1,28 +1,28 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-main>
+      <nav>
+        <nav-bar></nav-bar>
+      </nav>
+      <v-container>
+        <beer-list></beer-list>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import BeerList from './components/BeerList';
+import NavBar from './components/NavBar';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    BeerList,
+    NavBar
+  },
+  data: () => ({
+    beers: [],
+  }),
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
