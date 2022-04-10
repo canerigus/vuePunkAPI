@@ -57,50 +57,9 @@
 </template>
 
 <script>
-import dummybeer from "../dummydata";
+
 export default {
 	name: "BeerList",
-	data: () => ({
-		beerData: dummybeer,
-	}),
-	methods: {
-		/*     getBeer(){
-      this.stuff.forEach(stuff => {
-        console.log(stuff.beer)
-      })
-    }, */
-		randomBeer() {
-			console.time("fetchrandombeer");
-			fetch(`https://api.punkapi.com/v2/beers?page=${1}&per_page=${20}`)
-				.then((response) => {
-					if (response.ok) {
-						console.log("response");
-						console.log(response);
-						return response.json();
-					}
-				})
-				.then((data) => {
-					console.log("data");
-					console.log(data);
-					console.timeLog();
-					data.forEach((beer) => {
-						this.beerData.push({
-							id: beer.id,
-							name: beer.name,
-							first_brewed: beer.first_brewed,
-							food_pairing: beer.food_pairing,
-							description: beer.description,
-						});
-					});
-					console.timeEnd("fetchrandombeer");
-					console.log("this.beerData");
-					console.log(this.beerData);
-				})
-				.catch((error) => {
-					console.log(error);
-					/* this.error = 'Failed get beers - please try again later.'; */
-				});
-		},
-	},
+	props: ["beerData"],
 };
 </script>

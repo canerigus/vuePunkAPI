@@ -5,37 +5,42 @@
 		style="position: fixed; z-index: 10; width: 100%; top: 0"
 		flat
 	>
-		<v-toolbar-title>BEERTIFUL APP</v-toolbar-title>
-		<v-spacer></v-spacer>
-				<v-btn click="" color="rgb(54%, 45%, 45%)" elevation="4" x-large>
-			Load More Beers
-		</v-btn>
-		<v-spacer></v-spacer>
-		<v-btn click="" color="rgb(54%, 45%, 45%)" elevation="4" x-large>
-			Random Beer
-		</v-btn>
-		<v-spacer></v-spacer>
-		<v-autocomplete
-			rounded
-			flat
-			hide-no-data
+		<v-toolbar-title>BEERTIFUL</v-toolbar-title>
+		<v-text-field
+			style="margin-left: auto; max-width: 30rem"
+			v-model="beerSearched"
 			hide-details
+			single-line
 			label="Looking for a beer?"
-			solo-inverted
-		></v-autocomplete>
+			type="text"
+			clearable
+			filled
+			@keydown.enter="setBeer"
+			clear-icon="mdi-close-circle"
+			@click:clear="clearSearch"
+		></v-text-field>
 	</v-toolbar>
 </template>
 <script>
 export default {
+	emits: ["beer-search"],
 	name: "NavBar",
 	data() {
 		return {
-			isSearch: false,
+			beerSearched: "",
 		};
 	},
+	watch: {
+			beerSearched() {
+			this.$emit("beer-search", this.beerSearched);
+		},
+	},
 	methods: {
-		toggleIsSearch() {
-			this.isSearch = !this.isSearch;
+		clearSearch() {
+			this.beerSearched = "";
+		},
+		setBeer(event) {
+			this.beerSearched = event.target.value
 		},
 	},
 };
