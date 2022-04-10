@@ -1,16 +1,19 @@
 <template>
 	<v-toolbar
 		dark
-		color="#221213"
+		color="#483330"
 		style="position: fixed; z-index: 10; width: 100%; top: 0"
 		flat
 	>
-		<v-toolbar-title>BEERTIFUL</v-toolbar-title>
+		<v-toolbar-title>Beertiful</v-toolbar-title>
 		<v-text-field
-			style="margin-left: auto; max-width: 30rem"
+			dense
+			style=" max-width: 20rem; margin-left:auto;"
 			v-model="beerSearched"
 			hide-details
-			single-line
+			background-color="#6e5a57"
+			color="white"
+			outlined
 			label="Looking for a beer?"
 			type="text"
 			clearable

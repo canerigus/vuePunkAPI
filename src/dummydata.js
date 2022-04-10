@@ -1,7 +1,7 @@
 export default [
   {
     id: 1,
-    name: "Buzz",
+    name: "BuzzZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
     tagline: "A Real Bitter Experience.",
     first_brewed: "09/2007",
     description:

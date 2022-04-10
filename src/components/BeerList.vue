@@ -14,7 +14,12 @@
 						outlined
 						block
 						color="#221213"
-						style="background-color: #f0a313"
+						style="
+							background-color: #f0a313;
+							flex-shrink: 1;
+							justify-content: start;
+							overflow: hidden;
+						"
 						class="font-weight-bold"
 						>{{ beer.name }}</v-btn
 					>
@@ -26,7 +31,7 @@
 						</v-card-title>
 						<v-card-text
 							class="text-justify overflow-auto"
-							style="max-height: 120px"
+							style="max-height: 150px"
 						>
 							<h3 style="color: #594548">Description:</h3>
 							<i style="color: #221213">{{ beer.description }}</i>
@@ -57,7 +62,6 @@
 </template>
 
 <script>
-
 export default {
 	name: "BeerList",
 	props: ["beerData"],
