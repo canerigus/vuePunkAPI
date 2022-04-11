@@ -8,7 +8,7 @@
 		<v-toolbar-title>Beertiful</v-toolbar-title>
 		<v-text-field
 			dense
-			style=" max-width: 20rem; margin-left:auto;"
+			style=" max-width: 15rem; margin-left:auto;"
 			v-model="beerSearched"
 			hide-details
 			background-color="#6e5a57"
@@ -18,7 +18,6 @@
 			type="text"
 			clearable
 			filled
-			@keydown.enter="setBeer"
 			clear-icon="mdi-close-circle"
 			@click:clear="clearSearch"
 		></v-text-field>
@@ -35,16 +34,15 @@ export default {
 	},
 	watch: {
 			beerSearched() {
+				if(this.beerSearched !== null){
 			this.$emit("beer-search", this.beerSearched);
+			}
 		},
 	},
 	methods: {
 		clearSearch() {
 			this.beerSearched = "";
-		},
-		setBeer(event) {
-			this.beerSearched = event.target.value
-		},
+		}
 	},
 };
 </script>

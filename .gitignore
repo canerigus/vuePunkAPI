@@ -2,6 +2,7 @@
 node_modules
 /dist
 dump.txt
+dummydata.js
 
 
 # local env files

@@ -1,6 +1,6 @@
 <template>
 <v-row class="justify-center">
-  <v-btn v-if="page>5" fab color="#8C2703" disabled bottom @click="moreBeer">
+  <v-btn v-if="page>5" fab color="#8C2703" disabled bottom>
 		<v-icon color="white">mdi-plus</v-icon>
 	</v-btn>
 	<v-btn v-else fab color="#8C2703" @click="moreBeer">
@@ -13,11 +13,6 @@
 export default {
 	name: "LoadBeer",
   props:['page'],
-  data(){
-    return {
-      isDisabled: false
-    }
-  },
   methods:{
     moreBeer()  {
     this.$emit("more-beer", this.page);
