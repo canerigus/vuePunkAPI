@@ -1,4 +1,9 @@
-# punkpai
+# VueJS Dynamic Filter & Search App with Punk API
+
+![1](https://user-images.githubusercontent.com/61908293/162910941-d5fe22ba-dc86-4d18-97ed-8085a4e60b19.png)
+
+![2](https://user-images.githubusercontent.com/61908293/162910950-e1786322-bac9-4c2d-b642-8e7f87fb1349.png)
+
 
 ## Project setup
 ```
